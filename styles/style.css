@@ -6,8 +6,11 @@
 body {
 }
 .container {
-  width: 80%;
-  margin: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .card {
   border: 1px solid black;
