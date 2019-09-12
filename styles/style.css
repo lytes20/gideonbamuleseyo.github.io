@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+.card {
+  border: 1px solid black;
+  width: 50%;
+  padding: 20px;
+}
+
+.email {
+  margin-top: 10px;
+}
