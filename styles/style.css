@@ -5,6 +5,10 @@
 }
 body {
 }
+header{
+  padding: 10px;
+  text-align: right;
+}
 .container {
   position: absolute;
   left: 50%;
@@ -20,4 +24,12 @@ body {
 
 .email {
   margin-top: 10px;
+}
+
+.background-dark{
+  background-color: #121212;
+}
+
+.toggle-theme{
+  padding: 10px;
 }
