@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 body {
+  font-family: "Roboto", sans-serif;
 }
 header {
   padding: 10px;
@@ -34,7 +35,7 @@ header {
 .toggle-theme {
   padding: 10px;
   border-radius: 4px;
-  outline:none;
+  outline: none;
   cursor: pointer;
 }
 
@@ -46,4 +47,12 @@ header {
   color: #90caf9;
   background-color: #121212;
   border: 1px solid #90caf9;
+}
+
+a {
+  text-decoration: none;
+  color: #f48fb1;
+}
+a:hover {
+  text-decoration: underline;
 }
