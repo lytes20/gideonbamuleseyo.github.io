@@ -23,7 +23,11 @@ header {
   width: 50%;
   padding: 20px;
 }
-
+@media only screen and (max-width: 1004px) {
+  .card {
+    min-width: 251px;
+  }
+}
 .email {
   margin-top: 10px;
 }
