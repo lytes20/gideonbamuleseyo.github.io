@@ -5,10 +5,11 @@
 }
 body {
 }
-header{
+header {
   padding: 10px;
   text-align: right;
 }
+
 .container {
   position: absolute;
   left: 50%;
@@ -26,10 +27,23 @@ header{
   margin-top: 10px;
 }
 
-.background-dark{
+.background-dark {
   background-color: #121212;
 }
 
-.toggle-theme{
+.toggle-theme {
   padding: 10px;
+  border-radius: 4px;
+  outline:none;
+  cursor: pointer;
+}
+
+.button-white-theme {
+  border: 1px solid black;
+}
+
+.button-dark-theme {
+  color: #90caf9;
+  background-color: #121212;
+  border: 1px solid #90caf9;
 }
