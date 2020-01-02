@@ -22,6 +22,7 @@ header {
   border: 1px solid black;
   width: 50%;
   padding: 20px;
+  border-radius: 4px;
 }
 @media only screen and (max-width: 1004px) {
   .card {
@@ -59,4 +60,25 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+footer {
+  position: absolute;
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
+}
+
+footer img {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.social-media-icons-container {
+  text-align: center;
+}
+
+.more-about-link-container {
+  text-align: right;
 }
