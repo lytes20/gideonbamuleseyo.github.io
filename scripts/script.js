@@ -1,9 +1,17 @@
 const toggleThemeButton = document.getElementById("toggle-theme");
-let themePreference = localStorage.getItem("themePreference")
+let themePreference = localStorage.getItem("themePreference");
 
 const containerDiv = document.getElementsByClassName("container");
+const skillsContainer = document.querySelector(".skills-container");
+const toolsContainer = document.querySelector(".tools-container");
 const cardDiv = document.getElementById("card");
 const aTag = document.getElementsByTagName("a");
+
+// ------ function calls
+addSkills(skillsContainer, skills, "skill")
+addSkills(toolsContainer, tools, "tool")
+// ------ End of function calls
+
 
 toggleThemeButton.addEventListener("click", changeToDarkTheme);
 // colors
@@ -14,8 +22,8 @@ toggleThemeButton.addEventListener("click", changeToDarkTheme);
  * @returns {void}
  */
 function changeToDarkTheme() {
-  let isDarkThemeSelected = JSON.parse(localStorage.getItem("isDark"))
-  console.log(isDarkThemeSelected)
+  let isDarkThemeSelected = JSON.parse(localStorage.getItem("isDark"));
+  console.log(isDarkThemeSelected);
   setUp(isDarkThemeSelected);
   localStorage.setItem("isDark", !isDarkThemeSelected);
 }
@@ -42,4 +50,17 @@ function setUp(selection) {
     toggleThemeButton.classList.remove("button-dark-theme");
     aTag[0].style.color = "#f48fb1";
   }
+}
+
+/**
+ * Handles addingSkills to
+ * @returns {void}
+ */
+function addSkills(parentElement, dataArray, item) {
+  dataArray.map(data => {
+    let skillDiv = document.createElement("div");
+    skillDiv.className = `${item}-container`;
+    skillDiv.innerHTML = `${data}`;
+    parentElement.appendChild(skillDiv);
+  });
 }
