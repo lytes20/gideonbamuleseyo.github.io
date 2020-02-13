@@ -7,6 +7,7 @@ const skillsContainer = document.querySelector(".skills-container");
 const toolsContainer = document.querySelector(".tools-container");
 const cardDiv = document.getElementById("card");
 const aTag = document.getElementsByTagName("a");
+const main = document.querySelector(".main");
 let lines = document.getElementsByClassName("line");
 var lettersArray = [];
 
@@ -41,21 +42,22 @@ const splitWords = word => {
  * @returns {void}
  */
 const animateLine = (line, index) => {
+  setTimeout(() => {
+    main.classList.add("full-height");
+  }, 400);
   setTimeout(function() {
-    line.parentElement.style.opacity = 1;
+    line.style.opacity = 1;
     line.className = "line in";
-  }, 400 + index * 80);
-
+  }, 1200 + index * 80);
 };
 
 const handleWordsAnimation = () => {
   for (var i = 0; i < lines.length; i++) {
-    console.log(lines)
+    console.log(lines);
     // lines
-    lines[i].className = "line behind"
+    lines[i].className = "line behind";
     animateLine(lines[i], i);
   }
-
 };
 handleWordsAnimation();
 

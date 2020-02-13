@@ -2,6 +2,7 @@
   display: inline-block;
   transform: translateZ(25px);
   transform-origin: 50% 50% 25px;
+  opacity: 0;
 }
 .line.behind {
   transform: rotateX(90deg);
