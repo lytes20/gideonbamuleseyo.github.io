@@ -5,6 +5,7 @@ const header = document.querySelector("header");
 const containerDiv = document.getElementsByClassName("container");
 const skillsContainer = document.querySelector(".skills-container");
 const toolsContainer = document.querySelector(".tools-container");
+const experienceContainer = document.querySelector(".experience-container");
 const cardDiv = document.getElementById("card");
 const aTag = document.getElementsByTagName("a");
 const main = document.querySelector(".main");
@@ -14,6 +15,8 @@ var lettersArray = [];
 // ------ function calls
 addSkills(skillsContainer, skills, "skill");
 addSkills(toolsContainer, tools, "tool");
+console.log(workExperience);
+addWorkExperience();
 // ------ End of function calls
 
 /**
@@ -122,5 +125,21 @@ function addSkills(parentElement, dataArray, item) {
     skillDiv.className = `${item}-container`;
     skillDiv.innerHTML = `${data}`;
     parentElement.appendChild(skillDiv);
+  });
+}
+
+/**
+ * Handles addingSkills to
+ * @returns {void}
+ */
+function addWorkExperience(parentElement, dataArray, item) {
+  workExperience.map(experience => {
+    let skillDiv = document.createElement("div");
+    skillDiv.className = ``;
+    skillDiv.innerHTML = `
+    <p>${experience.name}</p>
+    <p>${experience.desc}</p>
+    `;
+    experienceContainer.appendChild(skillDiv);
   });
 }
