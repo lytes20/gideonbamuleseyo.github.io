@@ -1,17 +1,75 @@
 const toggleThemeButton = document.getElementById("toggle-theme");
 let themePreference = localStorage.getItem("themePreference");
 
+const header = document.querySelector("header");
 const containerDiv = document.getElementsByClassName("container");
 const skillsContainer = document.querySelector(".skills-container");
 const toolsContainer = document.querySelector(".tools-container");
 const cardDiv = document.getElementById("card");
 const aTag = document.getElementsByTagName("a");
+let lines = document.getElementsByClassName("line");
+var lettersArray = [];
 
 // ------ function calls
-addSkills(skillsContainer, skills, "skill")
-addSkills(toolsContainer, tools, "tool")
+addSkills(skillsContainer, skills, "skill");
+addSkills(toolsContainer, tools, "tool");
 // ------ End of function calls
 
+/**
+ * Split letters in the divs and put them in spans
+ * @param {HTMLCollection} word - div containing the letters
+ * @returns {Array}
+ */
+const splitWords = word => {
+  let content = word.innerHTML;
+  word.innerHTML = "";
+  let letters = [];
+  for (var i = 0; i < content.length; i++) {
+    var letter = document.createElement("span");
+    letter.className = "letter";
+    letter.innerHTML = content.charAt(i);
+    word.appendChild(letter);
+    letters.push(letter);
+  }
+  return letters;
+};
+
+/**
+ * Handles actual animation
+ * @param {HTMLElement} letter - span containing the letter to be animated
+ *  * @param {Number} index - position of the letter in the letters array
+ * @returns {void}
+ */
+const animateLine = (line, index) => {
+  setTimeout(function() {
+    line.parentElement.style.opacity = 1;
+    line.className = "line in";
+  }, 400 + index * 80);
+
+};
+
+const handleWordsAnimation = () => {
+  for (var i = 0; i < lines.length; i++) {
+    console.log(lines)
+    // lines
+    lines[i].className = "line behind"
+    animateLine(lines[i], i);
+  }
+
+};
+handleWordsAnimation();
+
+const handleScrollToDos = () => {
+  if (window.pageYOffset === 0) {
+    header.classList.remove("header-colored");
+  } else {
+    header.classList.add("header-colored");
+  }
+};
+const scrollHandle = () => {
+  window.addEventListener("scroll", handleScrollToDos);
+};
+scrollHandle();
 
 toggleThemeButton.addEventListener("click", changeToDarkTheme);
 // colors

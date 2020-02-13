@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 header {
   position: fixed;
@@ -13,19 +13,57 @@ header {
   width: 100%;
   padding: 10px;
   text-align: right;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
-section{
+.header-colored {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.4s; /* For Safari 3.1 to 6.0 */
+  transition: 0.4s;
+}
+section {
   width: 100%;
   height: 100vh;
-  border: 2px solid red;
+  /* border: 2px solid red; */
+}
+.main {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://images.unsplash.com/photo-1501769214405-5e5ee5125a02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1996&q=80");
+  background-color: #77eedf;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
 }
 .container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10vw;
+  /* position: relative; */
+  /* border: 1px solid green; */
+}
+h1 div {
+  display: inline-block;
+}
+.container h1 {
+  font-size: 3.5vw;
+  margin-top: 140px;
+  width: 60vw;
+  color: #191a1a;
+  letter-spacing: 0em;
+  line-height: 1.56em;
+}
+.scroll-container {
+  /* border: 1px solid blue; */
+  width: 100px;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  bottom: 80px;
+  background: transparent;
+}
+.scroll-container img {
+  width: 100%;
+  background: transparent;
 }
 .card {
   border: 1px solid black;
@@ -91,4 +129,16 @@ footer img {
 
 .more-about-link-container {
   text-align: right;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
