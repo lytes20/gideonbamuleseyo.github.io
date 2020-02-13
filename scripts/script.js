@@ -1,7 +1,9 @@
 const toggleThemeButton = document.getElementById("toggle-theme");
 let themePreference = localStorage.getItem("themePreference");
 
+// Variable Declarations
 const header = document.querySelector("header");
+const actualFooterWrapper = document.querySelector(".actual-footer-wrapper")
 const containerDiv = document.getElementsByClassName("container");
 const skillsContainer = document.querySelector(".skills-container");
 const toolsContainer = document.querySelector(".tools-container");
@@ -15,10 +17,13 @@ var lettersArray = [];
 // ------ function calls
 addSkills(skillsContainer, skills, "skill");
 addSkills(toolsContainer, tools, "tool");
-console.log(workExperience);
 addWorkExperience();
 // ------ End of function calls
-
+// --- some chores
+actualFooterWrapper.style.top = `${header.clientHeight}px`
+actualFooterWrapper.style.height = `calc(100vh - ${header.clientHeight}px)`
+// console.log(header.clientHeight)
+// --- End chores
 /**
  * Split letters in the divs and put them in spans
  * @param {HTMLCollection} word - div containing the letters
@@ -56,7 +61,6 @@ const animateLine = (line, index) => {
 
 const handleWordsAnimation = () => {
   for (var i = 0; i < lines.length; i++) {
-    console.log(lines);
     // lines
     lines[i].className = "line behind";
     animateLine(lines[i], i);

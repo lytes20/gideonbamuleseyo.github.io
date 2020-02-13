@@ -1,5 +1,21 @@
+.actual-footer-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.actual-footer {
+  width: 100%;
+  height: 100%;
+  background: #222;
+}
 .footer-section {
-  background: #1a1b1b;
+  /* background: #1a1b1b; */
+  position: relative;
 }
 
 .button-cta {
@@ -13,4 +29,16 @@
   position: relative;
   overflow: hidden;
   transition: background-color 400ms ease, border 400ms ease;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
