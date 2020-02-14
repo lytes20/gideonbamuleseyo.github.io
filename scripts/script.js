@@ -3,7 +3,7 @@ let themePreference = localStorage.getItem("themePreference");
 
 // Variable Declarations
 const header = document.querySelector("header");
-const actualFooterWrapper = document.querySelector(".actual-footer-wrapper")
+const actualFooterWrapper = document.querySelector(".actual-footer-wrapper");
 const containerDiv = document.getElementsByClassName("container");
 const skillsContainer = document.querySelector(".skills-container");
 const toolsContainer = document.querySelector(".tools-container");
@@ -20,8 +20,8 @@ addSkills(toolsContainer, tools, "tool");
 addWorkExperience();
 // ------ End of function calls
 // --- some chores
-actualFooterWrapper.style.top = `${header.clientHeight}px`
-actualFooterWrapper.style.height = `calc(100vh - ${header.clientHeight}px)`
+actualFooterWrapper.style.top = `${header.clientHeight}px`;
+actualFooterWrapper.style.height = `calc(100vh - ${header.clientHeight}px)`;
 // console.log(header.clientHeight)
 // --- End chores
 /**
@@ -136,14 +136,16 @@ function addSkills(parentElement, dataArray, item) {
  * Handles addingSkills to
  * @returns {void}
  */
-function addWorkExperience(parentElement, dataArray, item) {
+function addWorkExperience() {
   workExperience.map(experience => {
-    let skillDiv = document.createElement("div");
-    skillDiv.className = ``;
-    skillDiv.innerHTML = `
-    <p>${experience.name}</p>
-    <p>${experience.desc}</p>
+    let experienceDiv = document.createElement("div");
+    experienceDiv.className = `experience-item`;
+    experienceDiv.innerHTML = `
+      <div class="company-logo-container">
+      <img src=${experience.imagePath} alt="company logo" class="company-logo"/>
+    </div>
+    <a href=${experience.website} target="_blank">${experience.name}</a>
     `;
-    experienceContainer.appendChild(skillDiv);
+    experienceContainer.appendChild(experienceDiv);
   });
 }

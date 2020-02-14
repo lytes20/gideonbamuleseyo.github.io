@@ -129,4 +129,30 @@ footer img {
 }
 .section--two {
   background-color: #edeef3;
+  padding: 1rem;
+}
+.section-two-content {
+  text-align: center;
+}
+
+.section-two-heading {
+  margin: 40px 0;
+}
+
+.experience-container {
+  display: flex;
+}
+
+.experience-item {
+  text-align: center;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.company-logo-container {
+  /* height: 36vw; */
+  width: 20vw;
+  margin: 0 auto;
+}
+.company-logo {
+  width: 100%;
 }
