@@ -8,6 +8,7 @@ const containerDiv = document.getElementsByClassName("container");
 const skillsContainer = document.querySelector(".skills-container");
 const toolsContainer = document.querySelector(".tools-container");
 const experienceContainer = document.querySelector(".experience-container");
+const projectsContainer = document.querySelector(".projects-container")
 const cardDiv = document.getElementById("card");
 const aTag = document.getElementsByTagName("a");
 const main = document.querySelector(".main");
@@ -18,6 +19,7 @@ var lettersArray = [];
 addSkills(skillsContainer, skills, "skill");
 addSkills(toolsContainer, tools, "tool");
 addWorkExperience();
+addProjects();
 // ------ End of function calls
 // --- some chores
 actualFooterWrapper.style.top = `${header.clientHeight}px`;
@@ -133,7 +135,7 @@ function addSkills(parentElement, dataArray, item) {
 }
 
 /**
- * Handles addingSkills to
+ * Handles addingExperience to
  * @returns {void}
  */
 function addWorkExperience() {
@@ -147,5 +149,27 @@ function addWorkExperience() {
     <a href=${experience.website} target="_blank">${experience.name}</a>
     `;
     experienceContainer.appendChild(experienceDiv);
+  });
+}
+
+/**
+ * Handles addingProjects
+ * @returns {void}
+ */
+function addProjects() {
+  projects.map(project => {
+    let projectDiv = document.createElement("div");
+    projectDiv.className = `project-item`;
+    projectDiv.innerHTML = `
+      <div class="company-logo-container">
+      <img src=${project.imagePath} alt="company logo" class="company-logo"/>
+    </div>
+    <div>
+    <a href=${project.website} target="_blank">project</a>
+    <a href=${project.repo} target="_blank">repository</a>
+    </div>
+
+    `;
+    projectsContainer.appendChild(projectDiv);
   });
 }

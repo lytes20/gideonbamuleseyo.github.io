@@ -136,20 +136,22 @@ footer img {
 }
 
 .section-two-heading {
-  margin: 40px 0;
+  /* margin: 40px 0; */
 }
 
-.experience-container {
+.experience-container, .projects-container {
   display: flex;
+  /* height: calc(100vh / 2); */
+  /* border: 1px solid green */
 }
 
-.experience-item {
+.experience-item, .project-item {
   text-align: center;
   flex-grow: 1;
   flex-basis: 0;
 }
 .company-logo-container {
-  /* height: 36vw; */
+  /* height: 20vw; */
   width: 20vw;
   margin: 0 auto;
 }

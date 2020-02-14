@@ -4,6 +4,10 @@ var tools = ["PostgresSQL", "Postman", "GitHub"];
 const createWorkExperience = (name, desc, website, imagePath) => {
   return { name, desc, website, imagePath };
 };
+
+const createProject = (name, website, repository, imagePath) => {
+  return { name, website, repository, imagePath };
+};
 var workExperience = [
   createWorkExperience(
     "Andela",
@@ -22,5 +26,20 @@ var workExperience = [
     "Kola studios is a mobile game and application development company.",
     "https://kolastudios.com/",
     "./images/kola_logo.png"
+  )
+];
+
+var projects = [
+  createProject(
+    "Elevate",
+    "http://elevate-web.herokuapp.com/",
+    "https://github.com/lytes20/elevate-web",
+    "./images/elevate_logo.png"
+  ),
+  createProject(
+    "Tunga",
+    "https://tunga.io/",
+    "https://github.com/tunga-io/tunga-web",
+    "./images/tunga_logo.png"
   )
 ];
