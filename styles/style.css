@@ -114,14 +114,6 @@ a:hover {
   text-decoration: underline;
 }
 
-footer {
-  /* position: absolute; */
-  padding: 10px;
-  /* bottom: 0; */
-  width: 100%;
-  border: 1px solid green;
-}
-
 footer img {
   width: 30px;
   height: 30px;
