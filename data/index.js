@@ -1,5 +1,51 @@
-var skills = ["React", "React-Apollo", "GraphQL"];
-var tools = ["PostgresSQL", "Postman", "GitHub"];
+var skills = [
+  "React-Apollo",
+  "React",
+  "Javascript",
+  "GraphQL",
+  "Python",
+  "Java",
+  "ES6",
+  "Redux",
+  "Django",
+  "Flask",
+  "Laravel",
+  "Java 8",
+  "Java-Android",
+  "Objective-C",
+  "Swift",
+  "CSS",
+  "SASS",
+  "SQL",
+  "Gradle",
+  "Maven",
+  "Selenium",
+  "Mocha",
+  "TestNG"
+];
+var tools = [
+  "PostgreSQL",
+  "Google Analytics",
+  "Tableau",
+  "WordPress",
+  "Mailchimp",
+  "Postman",
+  "Bitbucket",
+  "Github",
+  "CircleCI",
+  "Travis",
+  "Linux/Other",
+  "Heroku",
+  "Apollo GraphQL",
+  "Jira",
+  "Pivotal Tracker",
+  "Asana",
+  "Balsamiq",
+  "Google G-Suite",
+  "Skype",
+  "Slack",
+  "Trello"
+];
 
 const createWorkExperience = (name, desc, website, imagePath) => {
   return { name, desc, website, imagePath };
