@@ -172,8 +172,9 @@ footer img {
   border-radius: 3px;
   padding: 1.875rem;
   margin-top: 1.875rem;
-  height: auto;
+  height: 100%;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  overflow: scroll;
 }
 .skills-item {
   padding: 0.625rem 0.875rem;
