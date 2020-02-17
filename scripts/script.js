@@ -128,7 +128,7 @@ function setUp(selection) {
 function addSkills(parentElement, dataArray, item) {
   dataArray.map(data => {
     let skillDiv = document.createElement("div");
-    skillDiv.className = `${item}-container`;
+    skillDiv.className = "skills-item";
     skillDiv.innerHTML = `${data}`;
     parentElement.appendChild(skillDiv);
   });

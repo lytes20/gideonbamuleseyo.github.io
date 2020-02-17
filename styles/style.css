@@ -139,13 +139,15 @@ footer img {
   /* margin: 40px 0; */
 }
 
-.experience-container, .projects-container {
+.experience-container,
+.projects-container {
   display: flex;
   /* height: calc(100vh / 2); */
   /* border: 1px solid green */
 }
 
-.experience-item, .project-item {
+.experience-item,
+.project-item {
   text-align: center;
   flex-grow: 1;
   flex-basis: 0;
@@ -157,4 +159,22 @@ footer img {
 }
 .company-logo {
   width: 100%;
+}
+.skills-section {
+  background: #fff;
+  border-radius: 3px;
+  padding: 1.875rem;
+  margin-top: 1.875rem;
+  height: auto;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.skills-item {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #d6dee4;
+  border-radius: 0.1875rem;
+  background-color: #fff;
+  min-width: 5.625rem;
+  display: inline-grid;
+  margin-right: 1.25rem;
+  margin-bottom: 1.0625rem;
 }
