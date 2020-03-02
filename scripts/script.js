@@ -164,8 +164,9 @@ function addProjects() {
       <div class="company-logo-container">
       <img src=${project.imagePath} alt="company logo" class="company-logo"/>
     </div>
-    <div>
+    <div class="links">
     <a href=${project.website} target="_blank">project</a>
+    <span class="separator"></span>
     <a href=${project.repo} target="_blank">repository</a>
     </div>
 

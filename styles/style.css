@@ -186,3 +186,19 @@ footer img {
   margin-right: 1.25rem;
   margin-bottom: 1.0625rem;
 }
+.links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  align-items: center;
+}
+.separator {
+  content: "";
+  width: 1px;
+  height: 10px;
+  background-color: silver;
+  position: relative;
+  display: block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
