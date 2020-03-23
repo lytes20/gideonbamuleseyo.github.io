@@ -54,6 +54,11 @@ const createWorkExperience = (name, desc, website, imagePath) => {
 const createProject = (name, website, repository, imagePath) => {
   return { name, website, repository, imagePath };
 };
+
+const createLeadershipExp = (name, website, imagePath) => {
+  return { name, website, imagePath };
+};
+
 var workExperience = [
   createWorkExperience(
     "Andela",
@@ -87,5 +92,18 @@ var projects = [
     "https://tunga.io/",
     "https://github.com/tunga-io/tunga-web",
     "./images/tunga_logo.png"
+  )
+];
+
+var leadershipExperience = [
+  createLeadershipExp(
+    "Developer Circles",
+    "https://developers.facebook.com/developercircles/",
+    "./images/devc.png"
+  ),
+  createLeadershipExp(
+    "Teencode Africa",
+    "http://teencodeafrica.com/",
+    "./images/teencodeafrica.png"
   )
 ];

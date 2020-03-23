@@ -8,7 +8,8 @@ const containerDiv = document.getElementsByClassName("container");
 const skillsContainer = document.querySelector(".skills-container");
 const toolsContainer = document.querySelector(".tools-container");
 const experienceContainer = document.querySelector(".experience-container");
-const projectsContainer = document.querySelector(".projects-container")
+const projectsContainer = document.querySelector(".projects-container");
+const leadershipContainer = document.querySelector(".leadership-container");
 const cardDiv = document.getElementById("card");
 const aTag = document.getElementsByTagName("a");
 const main = document.querySelector(".main");
@@ -20,6 +21,7 @@ addSkills(skillsContainer, skills, "skill");
 addSkills(toolsContainer, tools, "tool");
 addWorkExperience();
 addProjects();
+addLeadershipExp();
 // ------ End of function calls
 // --- some chores
 actualFooterWrapper.style.top = `${header.clientHeight}px`;
@@ -82,7 +84,7 @@ const scrollHandle = () => {
 };
 scrollHandle();
 
-toggleThemeButton.addEventListener("click", changeToDarkTheme);
+// toggleThemeButton.addEventListener("click", changeToDarkTheme);
 // colors
 // #333
 
@@ -172,5 +174,26 @@ function addProjects() {
 
     `;
     projectsContainer.appendChild(projectDiv);
+  });
+}
+
+/**
+ * Handles adding leadership experience
+ * @returns {void}
+ */
+function addLeadershipExp() {
+  leadershipExperience.map(exp => {
+    let leadershipDiv = document.createElement("div");
+    leadershipDiv.className = `project-item`;
+    leadershipDiv.innerHTML = `
+      <div class="company-logo-container">
+      <img src=${exp.imagePath} alt="company logo" class="company-logo"/>
+    </div>
+    <div class="links">
+    <a href=${exp.website} target="_blank">...</a>
+    </div>
+
+    `;
+    leadershipContainer.appendChild(leadershipDiv);
   });
 }
