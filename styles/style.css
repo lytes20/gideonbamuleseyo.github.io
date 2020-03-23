@@ -134,7 +134,7 @@ footer img {
 .more-about-link-container {
   text-align: right;
 }
-.section--two {
+.section--two, .leadership-section {
   background-color: #edeef3;
   padding: 1rem;
 }
