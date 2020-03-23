@@ -134,12 +134,17 @@ footer img {
 .more-about-link-container {
   text-align: right;
 }
-.section--two, .leadership-section {
+.section--two,
+.leadership-section {
   background-color: #edeef3;
+}
+.section--two,
+.projects-section,
+.leadership-section {
   padding: 1rem;
 }
 .section-two-content {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .section-two-heading {
@@ -158,6 +163,9 @@ footer img {
   text-align: center;
   flex-grow: 1;
   flex-basis: 0;
+}
+.leadership-item {
+  margin-bottom: 20px;
 }
 .company-logo-container {
   /* height: 20vw; */
@@ -201,4 +209,10 @@ footer img {
   display: block;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.leadership-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

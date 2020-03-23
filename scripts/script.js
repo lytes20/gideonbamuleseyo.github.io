@@ -184,15 +184,14 @@ function addProjects() {
 function addLeadershipExp() {
   leadershipExperience.map(exp => {
     let leadershipDiv = document.createElement("div");
-    leadershipDiv.className = `project-item`;
+    leadershipDiv.className = `leadership-item`;
     leadershipDiv.innerHTML = `
       <div class="company-logo-container">
-      <img src=${exp.imagePath} alt="company logo" class="company-logo"/>
-    </div>
-    <div class="links">
-    <a href=${exp.website} target="_blank">...</a>
-    </div>
-
+        <img src=${exp.imagePath} alt="company logo" class="company-logo"/>
+      </div>
+      <div class="leadership-links">
+        <a href=${exp.website} target="_blank">...</a>
+      </div>
     `;
     leadershipContainer.appendChild(leadershipDiv);
   });
