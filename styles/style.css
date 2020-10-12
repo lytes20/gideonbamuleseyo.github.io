@@ -147,14 +147,15 @@ footer img {
 }
 
 .section-two-heading {
-  /* margin: 40px 0; */
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .experience-container,
 .projects-container {
-  display: flex;
-  /* height: calc(100vh / 2); */
-  /* border: 1px solid green */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px 10px;
 }
 
 .experience-item,
@@ -215,3 +216,9 @@ footer img {
   justify-content: center;
   align-items: center;
 }
+
+/* .leadership-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px 10px;
+} */

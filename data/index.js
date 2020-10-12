@@ -61,6 +61,12 @@ const createLeadershipExp = (name, website, imagePath) => {
 
 var workExperience = [
   createWorkExperience(
+    "Ramani",
+    "Andela is an engineering as a service business that helps companies build teams quickly and cost effectively so they can ship faster.",
+    "https://www.ramani.io/",
+    "./images/ramani_green_logo.png"
+  ),
+  createWorkExperience(
     "Andela",
     "Andela is an engineering as a service business that helps companies build teams quickly and cost effectively so they can ship faster.",
     "https://andela.com/",
