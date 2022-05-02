@@ -54,3 +54,7 @@ jspm_packages
 
 # Contentlayer
 .contentlayer
+
+.vercel
+public/sitemap.xml
+public/feed.xml
