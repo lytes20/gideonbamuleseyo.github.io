@@ -9,24 +9,12 @@ export default function Home({ videos }) {
     <Container>
       <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
         <div className="mx-auto text-center">
-          <Image
-            alt="Gideon Bamuleseyo"
-            height={144}
-            width={144}
-            src="/profile.JPEG"
-            className="rounded-full filter grayscale"
-          />
-          <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
-            Gideon Bamuleseyo
-          </h1>
+          <Image alt="Gideon Bamuleseyo" height={144} width={144} src="/profile.jpg" className="rounded-full filter grayscale" />
+          <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">Gideon Bamuleseyo</h1>
           <h2 className="text-gray-700 dark:text-gray-200 mb-4"></h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-16">
-            Hi, my name is Gideon. I am a Software Engineer.
-          </p>
+          <p className="text-gray-600 dark:text-gray-400 mb-16">Hi, my name is Gideon. I am a Software Engineer.</p>
         </div>
-        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">
-          Featured Posts
-        </h3>
+        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">Featured Posts</h3>
         <BlogPostCard
           title="Notes on Migrating Data from One Database to Another"
           slug="db-migration-firebase-mongo"
@@ -37,12 +25,7 @@ export default function Home({ videos }) {
         <Link href="/blog">
           <a className="flex mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6">
             Read all posts
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="h-6 w-6 ml-1"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="h-6 w-6 ml-1">
               <path
                 stroke="currentColor"
                 strokeLinecap="round"

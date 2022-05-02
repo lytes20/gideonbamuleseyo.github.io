@@ -53,10 +53,10 @@ export default function About() {
           </p>
           <h2>Headshots</h2>
           <div className="flex space-x-8">
-            <a href="/profile.JPEG">
+            <a href="/profile.jpg">
               <Image alt="Gideon Bamuleseyo headshot" width={800} quality={100} src={profile} className="rounded-md" />
             </a>
-            <a href="/profile-bw.JPEG">
+            <a href="/profile-bw.jpg">
               <Image alt="Gideon Bamuleseyo headshot" width={800} quality={100} src={profileBW} className="rounded-md" />
             </a>
           </div>
