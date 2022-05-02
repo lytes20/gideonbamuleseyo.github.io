@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://gideonb.dev/sitemap.xml

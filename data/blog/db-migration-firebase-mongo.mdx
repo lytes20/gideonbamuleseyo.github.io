@@ -1,0 +1,99 @@
+---
+title: 'Notes on Migrating Data from One Database to Another'
+publishedAt: '2021-10-16'
+summary: 'As your company grows, you will find a need to scale. This may cause you to revise the stack or architecture you started with. And one of the items you may look into changing is the underlying database you are using.'
+image: '/static/images/rust/banner.png'
+---
+
+As your company grows, you will find a need to scale.
+
+For startups after finding product-market fit, you will get more signups, more traffic will come your way. 
+This may cause you to revise the stack or architecture you started with.
+And one of the items you may look into changing is the underlying database you are using.
+In my case, we found ourselves having to migrate from [Firebase](https://firebase.google.com/docs/firestore) to [MongoDB](https://www.mongodb.com/). We needed to redefine our schemas and write better queries.
+
+
+I solely had to migrate data that had been collected for over two years. The data was over 150,000 documents. Database size was over 90MBs.
+We had redefined our schemas so this was not just a copy-paste job. While migrating the data, I had to mutate it to meet the new schema requirements and then insert it into the database in the respective collections.
+
+## Reasons why you may need to migrate.
+- To write more powerful queries. In my case, we wanted to gain as much insight as possible from the data. This meant writing more power queries and aggregations and Mongo was close enough.
+- Design better schemas. The way you define your schemas can set you up for success. It can enable you to write powerful APIs that are easy to consume. Your database of choice tends to dictate how you define your schemas.
+- Improve your system performance. This could mean faster reads and writes to your database. Different databases have different read and write speeds.
+- Strength of your team. The team you hire may be well versed in a certain database. And for velocity purposes, you may be forced to switch to their database of strength. I think though this is not a good enough reason to switch technologies. You need to pick the best tool for the job, not the tool you are familiar with.
+- Learn a new technology. You may just want to learn a new database and its querying language. If your system is in production, I would not advise you to change your database solely because you want to learn a new database.
+
+## Challenges Faced
+One of the mistakes I made was trying to migrate all the data in one go. So I wrote a script that copied all the data from one collection in firebase to the respective collection in Mongo. 
+After migrating a few collections, I paused to check, then I realized the following:
+- Missing Data. While writing the data to Mongo, some of it didn’t meet the requirements so it returned an error. However, the script kept executing like nothing was wrong, because you know it was javascript.
+- Duplicate data. I encountered the duplicate data issue several times. The first one was because I was not keeping track of the documents I had migrated. The second time was because of the wrong logic in my script to sync the databases. I hence ended up having some duplicate records.
+- Missing fields. My script was not perfect for some of the collections, so I ended up missing some of the fields for some of the documents.
+- One mistake gets multiplied a thousandfold. Because while migrating, you do bulk writes, when you make a mistake it ends up affecting every record in that bulk write. This means you have to start over again or write an update script to fix your mistake.
+
+## Solution (Approach you may need to take)
+After a number of iterations on my migration and failing in most of them. I think I found an approach that one can use.
+
+## Handling the migration
+Data migration is just like one of those algorithms problems you have encountered. So approach it like that.
+
+Start by breaking down the problem. Break down the migration into smaller manageable pieces.
+Do not try biting off more than you can chew.
+
+Break down the migration into entities, or regions or collections, etc. 
+Pick one entity to start with, say Users. Now break this further into time blocks.
+Say first migrate users created in January of 2019.
+
+Again just like any other problem. Start by writing your algorithm (pseudo code).
+Then you can now turn this into code that you are going to execute.
+
+While the script is executing and an error occurs you should exit the execution.
+Examine that error, understand what the problem is, and see how to handle it.
+
+## Executing the migration scripts.
+To execute your migration scripts you need to start with the entry into your database.
+What I mean by entry is the entity to which the rest of your data is attached. 
+The genesis of your user stories. For most systems, its account creation, user accounts to be particular. 
+This because you will need the new Ids for the relationships in other records.
+
+## Keeping Track of migrated Records (Documents)
+You need to keep track of each migrated record. I used a Map.
+Feel free to use whatever data structure you like.
+Map the Id of the document from the old database to the new Id of the new record in the new database.
+This helps to ensure that you don’t have duplicate records in the new database.
+It also helps with lookups when an update is made in the old database and you need to make it in the new database.
+
+## Cutting over, Syncing Data and Types of data.
+At some point you are going to need to cut over from your old database to the new one.
+It becomes tricky/interesting if your application is in production with real users.
+
+Firstly, let us talk about the types of data you collect:
+
+1. **Static data (Historic data).** These are fields whose values never get edited such as dateCreated.
+2. **Dynamic Data.** These are fields whose values can be edited at any time such as userPassword
+3. **New Data.** This is data that is continuously created by your users as they use your application(s)
+
+If only there was just static data, right? That would make the job easier.
+But this is the real world, always so many moving parts.
+
+You need to make sure that the new database is up to date with the old one before you cut over.
+I think there are so many approaches to this.
+My approach was to write a sync script and schedule it to run every morning.
+The script would lookout for dynamic fields and update them if needed.
+It would also lookout for any new additions to the old database and copy them over.
+
+## Verifying and validating the data migration.
+You need to make sure that the data you have migrated is correct, consistent and it has maintained its integrity.
+- Manual Inspection. This could involve:
+Manually inspecting the database. You could use GUI application(s) provided by the database program. The terminal is also okay if you enjoy inspecting data that way.
+Manually comparing responses from the new endpoints versus the responses from the old endpoints.
+- Automated Inspection/Test scripts. This involves writing test scripts especially assert statements. For example, asserting if the number of users from the old database is equal to the number of users in the new database.
+
+## Conclusion
+Data migration is no light task especially if you have huge amounts of data that spans a long period.
+Implement it very carefully.
+
+There are probably many more ways to approach such a data migration, even better ways.
+Feel free to share any other ways that you have used or know.
+
+**Asante.**
