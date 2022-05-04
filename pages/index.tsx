@@ -13,6 +13,7 @@ export default function Home({ videos }) {
           <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">Gideon Bamuleseyo</h1>
           <h2 className="text-gray-700 dark:text-gray-200 mb-4"></h2>
           <p className="text-gray-600 dark:text-gray-400 mb-16">Hi, my name is Gideon. I am a Software Engineer.</p>
+          <p className="text-gray-600 dark:text-gray-400 mb-16">Javascript | Typescript | React | Next | Node | Express | Mongo</p>
         </div>
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">Featured Posts</h3>
         <BlogPostCard

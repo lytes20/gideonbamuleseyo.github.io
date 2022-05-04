@@ -14,15 +14,19 @@ export default function About() {
           </ul>
           <h4>Frameworks, Libraries</h4>
           <ul>
-            <li>React, Next, Node, Express, Flask, Django</li>
+            <li>React, Next, Node, Express, Flask, Django, Bull</li>
           </ul>
           <h4>Databases</h4>
           <ul>
-            <li>Mongo, Firebase Firestore, Postgresql</li>
+            <li>Mongo, Firebase Firestore, Redis, Postgresql</li>
+          </ul>
+          <h4>Testing</h4>
+          <ul>
+            <li>Jest, Mocha</li>
           </ul>
           <h4>Platforms and services</h4>
           <ul>
-            <li>Heroku, Firebase, Amazaon s3, Github, Bitbucket, Jira, Trello, Asana</li>
+            <li>Heroku, Firebase, Amazaon s3, Sentry, Github, Bitbucket, Jira, Trello, Asana</li>
           </ul>
         </div>
         <Timeline />

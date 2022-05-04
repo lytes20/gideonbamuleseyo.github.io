@@ -7,6 +7,7 @@ import cn from 'classnames';
 
 import Footer from 'components/Footer';
 import MobileMenu from 'components/MobileMenu';
+import { routes } from 'lib/constants';
 
 function NavItem({ href, text }) {
   const router = useRouter();
@@ -70,10 +71,9 @@ export default function Container(props) {
           </a>
           <div className="ml-[-0.60rem]">
             <MobileMenu />
-            <NavItem href="/" text="Home" />
-            <NavItem href="/experience" text="Experience" />
-            <NavItem href="/about" text="About" />
-            <NavItem href="/blog" text="Blog" />
+            {routes.map(({ path, name }) => (
+              <NavItem href={path} text={name} key={name} />
+            ))}
             <a
               target="_blank"
               rel="noopener noreferrer"
