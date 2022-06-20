@@ -1,0 +1,196 @@
+---
+title: 'How to setup ESLint and Prettier for your React Project'
+publishedAt: '2022-06-20'
+summary: 'Linting your code will help you write clean code. Code that is readable, easy to maintain, and has minimal bugs. Linting is the...'
+image: ''
+---
+
+In this blog post, I will walk you through how you can add ESLint and Prettier to your React project.
+
+Firstly let us talk about what linting is and why it is important.
+
+## What is Linting?
+Linting is the act of analyzing your code to identify and flag programming errors, bugs, stylistic errors, and suspicious constructs.
+The term "lint" as used in the software context is derived from the English noun lint, the fine tiny bits of fiber and fluff shed by clothing.
+Most of the time these fibers are unwanted and are annoying. On surfaces of clothes, this lint is removed using a lint brush or a lint roller.
+This lint brush or a roller would be the equivalent of a linter in the software context.
+
+A linter is a software that does the linting.
+For our case, our linter is going to be [ESLint](https://eslint.org/).
+
+Most programming languages have linters developed for them for example:
+- Python has [pylint](https://pylint.pycqa.org/en/latest/)
+- Go lang has [Golangci-lint](https://golangci-lint.run/)
+- etc ..
+
+Other Javascript linters include
+- standard js https://standardjs.com/
+- rome https://rome.tools/#about-rome
+- jslint https://www.jslint.com/
+- etc ..
+
+## Why lint your code?
+- Linting will help you identify possible syntax and logical errors reducing bugs in your code.
+
+  Example, Look at the code below, the spinner would never show up.
+
+<Image
+  alt={`constant condition`}
+  src={`/static/images/eslint/constantcondition.png`}
+  width={1254 / 2}
+  height={358 / 2}
+  priority
+/>
+
+  It is easy to forget and commit this hard-coded conditional check, but because the linter has highlighted it, you know to fix it before committing your code.
+
+- Linting also helps you find code whose formatting does not follow the defined styles.
+- Linting will also help you find code that does not adhere to coding standards and conventions.
+
+To summarize, linting your code will help you write clean code. Code that is readable, easy to maintain, and has minimal bugs.
+
+Now that we understand what linting is and why it is important,  let us go ahead and add ESLint to our React project.
+If you don't have a React project, you can quickly create one using [Create React App](https://create-react-app.dev/docs/getting-started/).
+## Create React Project
+```
+npx create-react-app my-app
+cd my-app
+```
+
+## Installing ESLint
+
+At the root of your project, install ESLint by running the following command.
+
+```
+npm install eslint --save-dev
+# or
+yarn add eslint --dev
+```
+## Configuring ESLint
+To set up an ESLint configuration file, run the commands below at root of your project:
+
+```
+npm init @eslint/config
+# or
+yarn create @eslint/config
+```
+<Image
+  alt={`constant condition`}
+  src={`/static/images/eslint/eslintconfig.gif`}
+  width={1254}
+  height={1000}
+  priority
+/>
+
+
+`.eslintrc.js` file will be created. You can use this file to define your ESLint settings for example to turn on and off rules.
+Note that I selected the [Airbnb javascript style guide](https://github.com/airbnb/javascript).
+You are free to use whichever style guide you prefer. You can also define your own style guide.
+
+You can read more about using the config file [here](https://eslint.org/docs/user-guide/configuring/configuration-files#using-configuration-files)
+
+
+## Linting code
+With ESLint added to the project and configured, you can lint your code by running the command `eslint`.
+So we are going to add this command to our scripts in the `package.json` file
+
+```
+  "scripts": {
+    "start": "react-scripts start",
+    ...
+    "lint": "eslint ."
+  },
+```
+
+## Fixing lint warnings and errors
+Running the command `eslint` alone just reports the lint errors and warnings. 
+Some of these errors and warnings can be automatically fixed by ESLint while the rest need to be manually fixed.
+To automatically fix the errors add the flag `--fix` to the eslint command.
+Let us update our scripts in the package.json with a command to fix the errors and warnings
+
+```
+  "scripts": {
+    "start": "react-scripts start",
+    ...
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
+  },
+
+ ```
+With the above-updated package.json, to lint your code, run the command:
+
+```
+npm run lint
+```
+To lint and fix the errors and warnings, run the command:
+```
+npm run lint-fix
+```
+We now have ESLint set up for our project. 
+We can lint our code and fix the errors and warnings
+
+Let us make this configuration better by adding Prettier
+
+
+## Prettier
+[Prettier](https://prettier.io/) is an opinionated code formatter.
+What that means is that prettier allows you to format your code to a  style defined by you.
+Prettier is [open source](https://github.com/prettier/prettier), so you can contribute to it, to make it more opinionated 😅
+### Adding prettier
+
+At the root of your project, run following command.
+```
+npm install --save-dev --save-exact prettier
+#or
+yarn add --dev --exact prettier
+```
+
+### Configuring prettier
+At the root of your project, run following command.
+```
+echo {}> .prettierrc.json
+```
+`.prettierrc.json` will get created. Use this file to define how you would like your code formatted.
+I will add two simple rules for now.
+
+```
+{
+  "printWidth": 100,
+  "singleQuote": true
+}
+```
+
+### Using ESLint with prettier
+To use ESLint with Prettier install [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier#installation)
+```
+npm install --save-dev eslint-config-prettier
+```
+### Extending "prettier" in your ESLint config
+
+```
+ extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'prettier'
+  ],
+```
+
+You can also add a command in your scripts for prettier.
+```
+  "scripts": {
+    "start": "react-scripts start",
+    ...
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "format": "prettier --write ."
+  },
+```
+
+And that is how you can set up ESLint and prettier in your React project
+To recap.
+
+- To lint, run `npm run lint`.
+- To lint and fix,  run `npm run lint --fix`.
+- To format using prettier, run `npm run format`.
+
+**Asante.**
