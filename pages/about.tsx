@@ -22,7 +22,7 @@ export default function About() {
               LinkedIn: <a href="https://www.linkedin.com/in/gideon-bamuleseyo-07b574119/">Gideon Bamuleseyo</a>
             </li>
             <li>
-              LinkedIn: <a href="https://gideonb.dev/">gideonb.dev</a>
+              Website: <a href="https://gideonb.dev/">gideonb.dev</a>
             </li>
           </ul>
           <h2>Bio</h2>
