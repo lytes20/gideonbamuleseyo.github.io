@@ -17,8 +17,8 @@ export default function Timeline() {
       <ExperienceItem time="2022 - Now" title="Lead Web Developer, Ramani" />
       <ExperienceItem time="2020 - 2022" title="Senior Software Engineer, Ramani" />
       <ExperienceItem time="2019 - 2020" title="Software Engineer, iBuild Global" />
-      <ExperienceItem time="2018 - 2020" title="Software Engineer, Andela" />
       <ExperienceItem time="2018 - 2020" title="Community Co-Lead, Meta(Facebook) Developer Circles Kampala" />
+      <ExperienceItem time="2018 - 2020" title="Software Engineer, Andela" />
       <ExperienceItem time="2017 - 2018" title="Software Engineering Intern, Kola Studios" />
 
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">Education</h3>
