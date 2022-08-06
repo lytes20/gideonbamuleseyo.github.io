@@ -24,6 +24,9 @@ export default function About() {
             <li>
               Website: <a href="https://gideonb.dev/">gideonb.dev</a>
             </li>
+            <li>
+              Stackoverflow: <a href="https://stackoverflow.com/users/6653241/gideon-bamuleseyo/">Gideon Bamuleseyo</a>
+            </li>
           </ul>
           <h2>Bio</h2>
           <h3>Current Job Title</h3>
