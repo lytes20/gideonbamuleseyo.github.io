@@ -1,4 +1,4 @@
-const ExperienceItem = (props) => {
+export const ExperienceItem = (props) => {
   return (
     <div className="mb-4">
       <div className="flex items-center">
@@ -21,6 +21,16 @@ export default function Timeline() {
       <ExperienceItem time="2018 - 2020" title="Software Engineer, Andela" />
       <ExperienceItem time="2017 - 2018" title="Software Engineering Intern, Kola Studios" />
 
+      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">Other Experiences</h3>
+      <br />
+      <div className="mb-4">
+        <div className="flex items-center">
+          <p className="mr-4 tracking-tight text-gray-900 dark:text-gray-100">May 2019</p>
+          <p className="text-gray-900 prose dark:text-gray-100">
+            Finalist, F8 2019 Hackathon; San Jose, USA (<a href="https://devpost.com/software/the-city-watch">DEVPOST link</a>)
+          </p>
+        </div>
+      </div>
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">Education</h3>
       <br />
       <ExperienceItem time="2014 - 2019" title="BS, Computer Science Makerere University Kampala" />

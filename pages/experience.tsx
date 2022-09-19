@@ -10,7 +10,7 @@ export default function About() {
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">Skills</h3>
           <h4>Languages</h4>
           <ul>
-            <li>Javascript, Typescript, Python, HTML/CSS </li>
+            <li>Javascript, Typescript, Python, Golang, HTML/CSS </li>
           </ul>
           <h4>Frameworks, Libraries</h4>
           <ul>
@@ -22,7 +22,7 @@ export default function About() {
           </ul>
           <h4>Testing</h4>
           <ul>
-            <li>Jest, Mocha</li>
+            <li>Jest, Mocha, Pytest</li>
           </ul>
           <h4>Platforms and services</h4>
           <ul>
