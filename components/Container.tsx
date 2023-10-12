@@ -77,7 +77,7 @@ export default function Container(props) {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://gideonb.dev/GideonBamuleseyoResume.pdf"
+              href="https://gideonbamuleseyo.vercel.app/GideonBamuleseyoResume.pdf"
               className={cn(
                 'font-normal text-gray-600 dark:text-gray-400',
                 'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all'

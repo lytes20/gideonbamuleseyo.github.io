@@ -53,7 +53,7 @@ export default function MobileMenu() {
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: `${resumeTransitionDelay}ms` }}
           >
-            <a target="_blank" rel="noopener noreferrer" href="https://gideonb.dev/GideonBamuleseyoResume.pdf" className="flex w-auto pb-4">
+            <a target="_blank" rel="noopener noreferrer" href="https://gideonbamuleseyo.vercel.app/GideonBamuleseyoResume.pdf" className="flex w-auto pb-4">
               Resume
             </a>
           </li>

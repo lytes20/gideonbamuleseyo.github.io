@@ -24,7 +24,7 @@ export default function Footer() {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://gideonb.dev/GideonBamuleseyoResume.pdf"
+            href="https://gideonbamuleseyo.vercel.app/GideonBamuleseyoResume.pdf"
             className="text-gray-500 hover:text-gray-600 transition"
           >
             Resume
