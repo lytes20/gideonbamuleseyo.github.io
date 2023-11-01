@@ -1,8 +1,4 @@
-import Image from 'next/image';
-
 import Container from 'components/Container';
-import profile from 'public/profile.jpg';
-import profileBW from 'public/profile-bw.jpg';
 
 export default function About() {
   return (
@@ -54,15 +50,6 @@ export default function About() {
             Gideon Bamuleseyo graduated from <a href="https://en.wikipedia.org/wiki/Makerere_University">Makerere University Kampala</a>{' '}
             with a BS in Computer Science.
           </p>
-          <h2>Headshots</h2>
-          <div className="flex space-x-8">
-            <a href="/profile.jpg">
-              <Image alt="Gideon Bamuleseyo headshot" width={800} quality={100} src={profile} className="rounded-md" />
-            </a>
-            <a href="/profile-bw.jpg">
-              <Image alt="Gideon Bamuleseyo headshot" width={800} quality={100} src={profileBW} className="rounded-md" />
-            </a>
-          </div>
         </div>
       </div>
     </Container>

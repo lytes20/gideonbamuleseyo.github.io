@@ -30,37 +30,35 @@ export default function MobileMenu() {
 
   let resumeTransitionDelay = routes[routes.length - 1]['transitionDelay'];
   resumeTransitionDelay = resumeTransitionDelay + 50;
-  return (
-    <>
-      <button className={cn(styles.burger, 'visible md:hidden')} aria-label="Toggle menu" type="button" onClick={toggleMenu}>
-        <MenuIcon data-hide={isMenuOpen} />
-        <CrossIcon data-hide={!isMenuOpen} />
-      </button>
-      {isMenuMounted && (
-        <ul className={cn(styles.menu, 'flex flex-col absolute bg-gray-100 dark:bg-gray-900', isMenuRendered && styles.menuRendered)}>
-          {routes.map(({ name, path, transitionDelay }) => (
-            <li
-              className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-              style={{ transitionDelay: `${transitionDelay}ms` }}
-              key={name}
-            >
-              <Link href={path}>
-                <a className="flex w-auto pb-4">{name}</a>
-              </Link>
-            </li>
-          ))}
+  return <>
+    <button className={cn(styles.burger, 'visible md:hidden')} aria-label="Toggle menu" type="button" onClick={toggleMenu}>
+      <MenuIcon data-hide={isMenuOpen} />
+      <CrossIcon data-hide={!isMenuOpen} />
+    </button>
+    {isMenuMounted && (
+      <ul className={cn(styles.menu, 'flex flex-col absolute bg-gray-100 dark:bg-gray-900', isMenuRendered && styles.menuRendered)}>
+        {routes.map(({ name, path, transitionDelay }) => (
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: `${resumeTransitionDelay}ms` }}
+            style={{ transitionDelay: `${transitionDelay}ms` }}
+            key={name}
           >
-            <a target="_blank" rel="noopener noreferrer" href="https://gideonbamuleseyo.vercel.app/GideonBamuleseyoResume.pdf" className="flex w-auto pb-4">
-              Resume
-            </a>
+            <Link href={path} className="flex w-auto pb-4">
+              {name}
+            </Link>
           </li>
-        </ul>
-      )}
-    </>
-  );
+        ))}
+        <li
+          className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+          style={{ transitionDelay: `${resumeTransitionDelay}ms` }}
+        >
+          <a target="_blank" rel="noopener noreferrer" href="https://gideonbamuleseyo.vercel.app/GideonBamuleseyoResume.pdf" className="flex w-auto pb-4">
+            Resume
+          </a>
+        </li>
+      </ul>
+    )}
+  </>;
 }
 
 function MenuIcon(props: JSX.IntrinsicElements['svg']) {
